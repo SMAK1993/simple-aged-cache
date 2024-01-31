@@ -91,7 +91,7 @@ public class SimpleAgedCache {
         if (existingEntry != null) {
             // Update existing entry
             existingEntry.value = value;
-            existingEntry.retentionInMillis = retentionInMillis;
+            existingEntry.retentionInMillis = (int) clock.millis() + retentionInMillis;
         }
         else {
             // Existing entry not found, so create a new one
